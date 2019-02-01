@@ -1,8 +1,17 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Button from "./Button";
+import "materialize-css/dist/css/materialize.min.css";
+
+import M from "materialize-css/dist/js/materialize.min.js";
 
 class App extends Component {
+  componentDidMount() {
+    if (typeof M === "object" && M.AutoInit) {
+      M.AutoInit();
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -19,6 +28,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <Button />
         </header>
       </div>
     );

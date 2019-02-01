@@ -1,3 +1,22 @@
+# Materialize Gotcha
+
+Remember to call `M.autoInit()` before loading materialize-styles in order to be able to access their stylesheets
+
+```
+import M from "materialize-css/dist/js/materialize.min.js";
+
+class App extends Component {
+  componentDidMount() {
+    if (typeof M === "object" && M.AutoInit) {
+      M.AutoInit();
+    }
+  }
+
+  ...
+}
+
+```
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
